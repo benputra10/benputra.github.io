@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+  font-family: "montserrat";
+}
+
+body {
+  background-color: #fff5eb;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.5fr 2fr 1.5fr 2fr 1fr 0.2fr;
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "hero hero hero hero"
+    "about about about about"
+    "materi materi materi materi"
+    "contact contact contact contact"
+    "footer footer footer footer";
+}
+
+/* navbar */
+
+.navbar {
+  background-color: antiquewhite;
+  grid-area: navbar;
+}
+
+nav {
+  background-color: #f7bb73;
+  height: 80px;
+}
+
+.brand {
+  display: flex;
+  height: 80px;
+  position: absolute;
+  top: 7px;
+  left: 12%;
+}
+
+nav ul {
+  float: right;
+  margin-right: 25px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 50px;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  position: relative;
+  color: aliceblue;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+nav ul li a:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+nav ul li a:hover:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+label #btn,
+label #cancel {
+  color: aliceblue;
+  font-size: 30px;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* hero */
+
+.hero {
+  grid-area: hero;
+}
+
+.box-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hero-text {
+  padding: 120px;
+  min-width: 500px;
+  text-shadow: 1px 1px 1px whitesmoke;
+}
+
+.btn-ig a {
+  background-color: #f7bb73;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 1px 1px 1px black;
+}
+
+.hero-img {
+  width: 50vw;
+}
+
+/* about */
+
+.about {
+  background-color: #f7bb73;
+  grid-area: about;
+}
+
+.about .tentang-kami {
+  text-align: center;
+}
+
+.about .box-about {
+  display: flex;
+  gap: 10px;
+}
+
+.about .box-about .about-content {
+  flex: 1; /* Membuat artikel mengambil ruang yang sama */
+  display: flex;
+  justify-content: center; /* Mengatur isi artikel di tengah secara horizontal */
+  align-items: center; /* Mengatur isi artikel di tengah secara vertikal */
+  height: 100%; /* Memastikan tinggi artikel sama */
+  padding: 15px;
+}
+
+.about .box-about .kutipan {
+}
+
+/* materi */
+
+.materi {
+  background-color: #fff5eb;
+  grid-area: materi;
+}
+
+.materi h1 {
+  text-align: center;
+}
+
+.materi .box-materi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.materi .box-materi .article {
+  background-color: #f7bb73;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.materi .box-materi .article:hover {
+  background-color: #f6d9b5;
+}
+
+.materi .box-materi .article .title {
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  text-shadow: 1px 1px 1px #fff5eb;
+}
+
+.materi .box-materi .article .title .credit {
+  font-size: 13px;
+  text-shadow: 1px 1px 1px #fff5eb;
+}
+
+/* contact */
+.contact {
+  background-color: #f7bb73;
+  grid-area: contact;
+  border-radius: 10px;
+}
+
+.contact h1 {
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+.contact .box-contact {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 50px;
+  justify-content: center;
+}
+
+.contact .box-contact .items h3 {
+  border-bottom: 1px solid;
+}
+
+.contact .box-contact .hubungi .contact .box-contact .ikuti-kami h3 {
+}
+
+/* footer */
+
+.footer {
+  background-color: #f7bb73;
+  grid-area: footer;
+  border-radius: 10px;
+}
+
+.footer p {
+  text-align: center;
+  font-weight: 600;
+}
+
+.footer p span {
+  color: red;
+}
+
+/* media queries */
+
+/* small */
+@media (max-width: 560px) {
+  * {
+    font-size: 12px;
+  }
+
+  .body {
+    margin: 10px auto;
+  }
+
+  nav .brand h2 {
+    display: none;
+  }
+  label #btn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: mediumaquamarine;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  #check:checked ~ label #btn {
+    display: none;
+  }
+
+  #check:checked ~ label #cancel {
+    display: block;
+  }
+
+  /* hero */
+
+  .box-hero {
+    flex-direction: column-reverse;
+  }
+
+  .hero-text {
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    min-width: 50px;
+  }
+
+  .hero-img {
+    width: 100%;
+  }
+
+  /* about */
+
+  .box-about {
+    flex-direction: column-reverse;
+  }
+}
